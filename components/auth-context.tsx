@@ -1,0 +1,14 @@
+"use client"
+
+import { SessionProvider } from "next-auth/react"
+import type React from "react"
+import { SessionTimeout } from "./session-timeout"
+
+export default function AuthContext({ children }: { children: React.ReactNode }) {
+    return (
+        <SessionProvider>
+            {children}
+            <SessionTimeout />
+        </SessionProvider>
+    )
+}
